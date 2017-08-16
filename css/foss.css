@@ -1,0 +1,165 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/*.slide-section {
+    min-height: 100vh;
+    background-color: #fff;
+}*/
+
+h2.section-title {
+    padding: 25px 15px;
+}
+
+.header-top {
+    position: relative;
+    bottom: 50px;
+}
+
+.mast-top {
+    width: 100%;
+    background-color: #084c8d;
+}
+
+.mast-png {
+    display: block;
+    margin: auto;
+}
+
+.partner-logo {
+    display: block;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+#timeline-embed {
+    height: 500px;
+}
+
+.full-width-img {
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+}
+
+.otp-logo {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding: 0px;
+    text-align: center;
+    max-width: 300px;
+    height: 200px;
+    margin: auto;
+}
+
+#otp-deployments, #planner-screenshot1, #planner-screenshot2 {
+    height: 500px;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.highlighted-text {
+    color: #d1441e;
+    /*color: #084c8d;*/
+}
+
+#pelias-map {
+    height: 300px;
+}
+
+.special-top {
+    margin-top: 500px;
+}
+
+#geocoder-selection {
+    display: block;
+    float: left;
+    width: 150px;
+    margin: 0 auto;
+    padding: 10px 0px 10px 30px;
+}
+
+#geocoder-selection ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#geocoder-selection li {
+    list-style-type: none;
+    line-height: 1;
+    padding-bottom: 0px;
+}
+
+#geocoder-selection a {
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: #888;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+    border: 0px;
+}
+
+#geocoder-selection a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #d1441e;
+}
+
+#center-street-div {
+    display: block;
+    float: left;
+    margin: 0 auto;
+}
+
+#center-street-div img {
+    height: 500px;
+    width: auto;
+    margin-left: 150px;
+}
+
+#polygon1, #polygon2, #polygon3, #polygon4, #polygon5 {
+    height: 220px;
+    width: 320px;
+}
+
+.polygon-maps {
+    height: 300px;
+    width: 320px;
+    float: left;
+    margin: 0px 15px;
+}
+
+#poi-caption, #business-caption, #res-caption, #transit-caption, #anomaly-caption {
+    font-size: 12px;
+    height: 50px;
+    width: 300px;
+    float: left;
+}
+
+.foss-chart {
+    display: block;
+    min-height: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-bottom {
+    width: 100%;
+    background-color: #111;
+}

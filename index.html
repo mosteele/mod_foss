@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Solving the last mile problem with OpenTripPlanner (OTP), Mapzen Pelias, and open data</title>
+
+		<meta name="description" content="A Presentation for FOSS4G Boston, 2017">
+		<meta name="author" content="Madeline Steele and Tom Lin, TriMet">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+				<!-- Introduction ################################## -->
+				<section>
+					<h3>Solving the last mile problem with OpenTripPlanner (OTP), Mapzen Pelias, and open data</h3>
+					<p><small>Seaport Hotel &amp; World Trade Center<br>Boston, MA<br><br><br></small></p>
+					<p><img src="img/TriMet_logo.png" alt="TriMet logo"></img></p>
+					<p>
+						<small>Presenters: Madeline Steele (<a>SteeleM@trimet.org</a>), Tom Lin (<a>LinT@trimet.org</a>)</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>About TriMet</h2>
+					<p><small>
+						Founded 45 years ago, TriMet provides bus, light rail and commuter rail service in the Portland, Oregon region. Our service area has a population of 1.5 million people.
+					</small></p>
+					<p><img src="img/Tili-Cam-2.gif" alt=MAX lightrail crossing river></img></p>
+				</section>
+
+				<section>
+					<h2>Open Data / Open Source Leadership</h2>
+					<img src="img/GTFS_class_diagram.svg" alt="General Transit Feed Specification Diagram" width="30%" style="float: right"; align="right"/>
+					<div class="ulist">
+							<ul style="display: block">
+									<li><p>2000: Implemented open source software policy</p></li>
+									<li><p>2002: Released open data</p></li>
+									<li><p>2005: Google Transit & GTFS</p></li>
+									<li><p>2008: Implementation of open source GIS</p></li>
+									<li><p>2009: Launch of OpenTripPlanner</p></li>
+									<li><p>2011: Adoption of OpenStreetMap</p></li>
+							</ul>
+							<p><br></p>
+					</div>
+				</section>
+
+				<!-- <section data-background="img/header-east.png" data-state="img-bottom"> -->
+				<section>
+				    <h2>The Challenge</h2>
+						<!-- <img src="img/Cat-at-a-blue-door.jpg" alt="Cat waiting at door" width="30%" style="float: right"; align="right"/> -->
+				    <div class="ulist">
+				        <!-- <ul style="width: 60%;"> -->
+								<ul>
+				            <li><p>First/Last Mile problem - transit can't take you door to door</p></li>
+										<li><p>More options than ever, but we lack tools that combine them</p></li>
+				        </ul>
+								<p><br></p>
+				    </div>
+						<!-- <img src="img/future-bg.png"> -->
+						<img src="img/header-east.png">
+
+						<!-- <p style="float:right"; "color:#808080" ><small><a href="https://commons.wikimedia.org/wiki/File:Cat-at-a-blue-door.jpg">photo credit: Heidi Bauer</a></small></p> -->
+				</section>
+
+				<section>
+				    <h2>The Opportunity</h2>
+				    <div class="ulist">
+				        <img src="img/mod_logo.png" alt="Mobility on Demand logo" style="float: right; width: 35%;">
+				        <ul style="display: block">
+				            <li><p>FTA's MOD Sandbox Program</p></li>
+											<div class="ulist">
+                          <ul style=style="display: block">
+                              <li><p>$8 million for innovative, accessible and seamless multimodal service and tools</p></li>
+                              <li><p>78 applicants - 11 awardees</p></li>
+                              <li><p>With in-kind contributions, TriMet's award totals over $1 million</p></li>
+                          </ul>
+                      </div>
+				        </ul>
+				    </div>
+				</section>
+
+				<section>
+				    <h2>Our Proposal</h2>
+				    <div class="ulist">
+				        <img src="img/Mode_Settings.png" alt="Mock up of mode settings interface"
+									width="30%" style="float: right; border:3px solid black">
+				        <ul style="width: 60%;">
+										<li><p>Enhance tools to make mixed-mode trips as frictionless as possible</p></li>
+										<li><p>Solve the last mile problem through innovation and collaboration</p></li>
+										<li><p>Make the platform replicable by using open data and open source</p></li>
+				        </ul>
+				    </div>
+				</section>
+
+				<section data-markdown>
+						<script type="text/template">
+								## Our approach
+								1. <!-- .element: class="fragment" data-fragment-index="1" --> **OpenTripPlanner (OTP)** - Extend code to incorporate SUM modes, real-time info, better pedestrian narrative
+								2.  <!-- .element: class="fragment" data-fragment-index="2" --> **Open Mapzen Pelias Geocoder** - Extend functionality for government agencies, and improve match rate
+								3. <!-- .element: class="fragment" data-fragment-index="3" --> **Open Data** - Improve OpenAddresses and OpenStreetMap (OSM) in support of comprehensive trip planning and geocoding.
+								4. <!-- .element: class="fragment" data-fragment-index="4" --> **Integrated Payment Plan**
+						</script>
+				</section>
+
+				<section>
+					<h2>Key Project Partners</h2>
+					<table>
+						<tbody>
+							<tr>
+								<td style="text-align:right">OpenTripPlanner Improvements</td>
+								<td style="text-align:left"><img width="300" src="img/conveyal_logo.png" alt="TriMet logo"></img></td>
+							</tr>
+							<tr>
+								<td style="text-align:right">Extended geocoder functionality</td>
+								<td style="text-align:left"><img width="300" src="img/mapzen_logo.png" alt="TriMet logo"></img></td>
+							</tr>
+							<tr>
+								<td style="text-align:right">Project Coordination</td>
+								<td style="text-align:left"><img height="100" src="img/ibi_logo.png" alt="TriMet logo" ></img></td>
+							</tr>
+							<tr>
+								<td style="text-align:right">Local data improvements</td>
+								<td style="text-align:left"><img width="300" src="img/metro_logo.png" alt="TriMet logo"></img></td>
+							</tr>
+					  </tbody>
+				  </table>
+				</section>
+
+
+				<section>
+					<h2>Data Providers</h2>
+					<table>
+						<tbody>
+							<tr>
+								<td><img width="400" src="img/uber_logo.ong" alt="Uber logo"></img></td>
+								<td><img width="400" src="img/lyft_logo.png" alt="Lyft logo"></img></td>
+							</tr>
+					  </tbody>
+				  </table>
+					<img src="img/biketown_logo.png" alt="Biketown logo">
+				</section>
+
+				<section>
+				    <h2>1. OpenTripPlanner (OTP)</h2>
+				    <div class="ulist">
+				        <img src="img/otp.png" alt="Open Trip Planner logo" style="float: right; background-color: #fff; border: 0.25px solid #ddd; border-radius: 15px; padding: 0px; text-align: center; max-width: 300px; height: auto;">
+				        <ul style="display: block">
+				            <li><p>Open source platform developed by TriMet and partners in 2009</p></li>
+										<li><p>Uses open data sources: OpenStreetMap; GTFS; and the National Elevation Dataset (NED)</p></li>
+										<li><p>Can combine multiple modes into a single trip</p></li>
+										<li><p>Dozens of applications worldwide</p></li>
+				        </ul>
+				    </div>
+				</section>
+
+				<section>
+				    <h2>OTP Deployments</h2>
+						<img src="img/otp-deployments.png" alt="Map showing OTP deploment sites">
+				</section>
+
+				<section>
+					<h2>Enhancements to OTP</h2>
+						<div class="ulist">
+							<img src="img/Bikeshare_View.png" alt="Mock up of bke share view"
+								width="30%" style="float: right; border:3px solid black">
+								<ul style="display: block">
+										<li><p>Adding additional modes</p></li>
+										<li><p>Incorporating real-time info</p></li>
+										<li><p>Better pedestrian routing</p></li>
+										<li><p>User interface improvments</p></li>
+										<ul style="display: block">
+											<li><p>Modern, modular library</p></li>
+											<li><p>Mobile-first design</p></li>
+											<li><p>Spanish language support</p></li>
+										</ul>
+								</ul>
+
+						</div>
+				</section>
+
+
+
+					<section data-background="img/sidewalk_cat.jpg" data-state="dimbg">
+						<h2>Open Data Enhancements</h2>
+						<div class="ulist">
+								<ul>
+										<li><p>Improved regional addresses for increased address match rate</p></li>
+										<li><p>Make it easier to load authoritative data to OpenAddresses</p></li>
+										<li><p>Adding sidewalk data to<br>OpenStreetMap</p></li>
+								</ul>
+
+						</div>
+					</section>
+
+
+					<section>
+						<h2>Sidewalk tagging</h2>
+						<img src="img/TriMet_sidewalk_tagging.gif" alt="">
+					</section>
+				<!-- OTP Background -->
+
+
+
+
+
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
