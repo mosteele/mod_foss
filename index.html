@@ -46,43 +46,55 @@
 				<section>
 					<h3>Solving the last mile problem with OpenTripPlanner (OTP), Mapzen Pelias, and open data</h3>
 					<p><small>Seaport Hotel &amp; World Trade Center<br>Boston, MA<br><br><br></small></p>
-					<p><img src="img/TriMet_logo.png" alt="TriMet logo"></img></p>
+					<table>
+						<tbody>
+							<tr>
+								<td ><img src="img/mod_logo.png" alt="Mobility on Demand logo"></img></td>
+								<td >     </td>
+								<td style="vertical-align:bottom"><img src="img/TriMet_logo.png" alt="TriMet logo"></img></td>
+							</tr>
+						</tbody>
+					</table>
 					<p>
-						<small>Presenters: Madeline Steele (<a>SteeleM@trimet.org</a>), Tom Lin (<a>LinT@trimet.org</a>)</small>
+						<small>Presenters: Madeline Steele (<a href="mailto:SteeleM@trimet.org">SteeleM@trimet.org</a>), Tom Lin (<a href="mailto:LinT@trimet.org">LinT@trimet.org</a>)</small>
 					</p>
 				</section>
 
 				<section>
+				<section>
 					<h2>About TriMet</h2>
 					<p><small>
-						Founded 45 years ago, <a href="https://trimet.org/">TriMet</a> provides bus, light rail and commuter rail service in the Portland, Oregon region. Our service area has a population of 1.5 million people.
+						Founded 45 years ago, <a href="https://trimet.org/">TriMet</a> provides bus, light rail<br>and commuter rail service in the Portland, Oregon region.
 					</small></p>
 					<p><a href="http://www.allclassical.org/tili-cam/"><img src="img/Tili-Cam-2.gif" alt="Animation of MAX lightrail crossing river"></img></a></p>
 				</section>
 
+
 				<section>
-					<h2>Open Data / Open Source Leadership</h2>
+					<h2>Open data & open source leadership</h2>
+						<div class="container">
+							<div class="ulist">
+								<ul style="display: block">
+										<li><p>2000: Established open source software policy</p></li>
+										<li><p>2002: Released open data</p></li>
+										<li><p>2005: <a href="http://gtfs.org/">GTFS</a> & Google Transit</p></li>
+										<li><p>2008: Implementated open source GIS</p></li>
+										<li><p>2009: Launch of OpenTripPlanner</p></li>
+										<li><p>2011: Adoption of OpenStreetMap</p></li>
+								</ul>
+							</div>
 
-					<div class="ulist">
-							<ul style="display: block">
-									<li><p>2000: Implemented open source software policy</p></li>
-									<li><p>2002: Released open data</p></li>
-									<li><p>2005: Google Transit & GTFS</p></li>
-									<li><p>2008: Implementation of open source GIS</p></li>
-									<li><p>2009: Launch of OpenTripPlanner</p></li>
-									<li><p>2011: Adoption of OpenStreetMap</p></li>
-							</ul>
-							<p><br></p>
-					</div>
-					<a href="http://transloc.com/gtfs-matter-public-transit/"><img src="img/GTFS.png" alt="General Transit Feed Specification logo"/></a>
+							<div class="exclusion">
+									<img src="img/bibi.jpeg" alt="Bibiana McHugh" style="float: right; border:3px solid black"></img>
+							</div>
+						</div>
 				</section>
+			</section>
 
-				<!-- <section data-background="img/header-east.png" data-state="img-bottom"> -->
+
 				<section>
 				    <h2>The Challenge</h2>
-						<!-- <img src="img/Cat-at-a-blue-door.jpg" alt="Cat waiting at door" width="30%" style="float: right"; align="right"/> -->
 				    <div class="ulist">
-				        <!-- <ul style="width: 60%;"> -->
 								<ul>
 				            <li><p>First/Last Mile problem - transit can't take you door to door</p></li>
 										<li><p>More options than ever, but we lack tools that combine them</p></li>
@@ -118,21 +130,11 @@
 				        <img src="img/Mode_Settings.png" alt="Mock up of mode settings interface"
 									width="30%" style="float: right; border:3px solid black">
 				        <ul style="width: 60%;">
-										<li><p>Enhance tools to make mixed-mode trips as frictionless as possible</p></li>
-										<li><p>Solve the last mile problem through innovation and collaboration</p></li>
-										<li><p>Make the platform replicable by using open data and open source</p></li>
+										<li><p>Solve the last mile problem with frictionless mixed-mode trip planning</p></li>
+										<li><p>Build off robust existing tools: OpenTripPlanner and Mapzen Pelias</p></li>
+										<li><p>Ensure replicability by using open data and open source</p></li>
 				        </ul>
 				    </div>
-				</section>
-
-				<section data-markdown>
-						<script type="text/template">
-								## Our approach
-								1. <!-- .element: class="fragment" data-fragment-index="1" --> **OpenTripPlanner (OTP)** - Extend code to incorporate SUM modes, real-time info, better pedestrian narrative
-								2.  <!-- .element: class="fragment" data-fragment-index="2" --> **Open Mapzen Pelias Geocoder** - Extend functionality for government agencies, and improve match rate
-								3. <!-- .element: class="fragment" data-fragment-index="3" --> **Open Data** - Improve OpenAddresses and OpenStreetMap (OSM) in support of comprehensive trip planning and geocoding.
-								4. <!-- .element: class="fragment" data-fragment-index="4" --> **Integrated Payment Plan**
-						</script>
 				</section>
 
 				<section>
@@ -140,7 +142,7 @@
 					<table>
 						<tbody>
 							<tr>
-								<td style="text-align:right">OpenTripPlanner Improvements</td>
+								<td style="text-align:right">OpenTripPlanner improvements</td>
 								<td style="text-align:left"><img width="300" src="img/conveyal_logo.png" alt="TriMet logo"></img></td>
 							</tr>
 							<tr>
@@ -148,7 +150,7 @@
 								<td style="text-align:left"><img width="300" src="img/mapzen_logo.png" alt="TriMet logo"></img></td>
 							</tr>
 							<tr>
-								<td style="text-align:right">Project Coordination</td>
+								<td style="text-align:right">Project coordination</td>
 								<td style="text-align:left"><img height="100" src="img/ibi_logo.png" alt="TriMet logo" ></img></td>
 							</tr>
 							<tr>
@@ -165,21 +167,33 @@
 					<table>
 						<tbody>
 							<tr>
-								<td><img width="400" src="img/uber_logo.ong" alt="Uber logo"></img></td>
-								<td><img width="400" src="img/lyft_logo.png" alt="Lyft logo"></img></td>
+								<td><img width="300" src="img/uber_logo.png" alt="Uber logo"></img></td>
+								<td><img width="300" src="img/lyft_logo.png" alt="Lyft logo"></img></td>
 							</tr>
 					  </tbody>
 				  </table>
-					<img src="img/biketown_logo.png" alt="Biketown logo">
+					<img width="600" src="img/biketown_logo.png" alt="Biketown logo">
+				</section>
+
+
+				<section>
+					<h2>Our approach</h2>
+							<ol>
+									<li><p>OpenTripPlanner development</p></li>
+									<li><p>Open data improvement - OSM and OpenAddresses</p></li>
+									<li><p>Integrated payment plan by <img width="200px" style='vertical-align:middle;' src='img/moovel_logo.png'></p></li>
+									<li><p>Mapzen Pelias enhancements</p></li>
+							</ol>
 				</section>
 
 				<section>
-				    <h2>1. OpenTripPlanner (OTP)</h2>
+				<section>
+				    <h2>1. OpenTripPlanner</h2>
 				    <div class="ulist">
 				        <img src="img/otp.png" alt="Open Trip Planner logo" style="float: right; background-color: #fff; border: 0.25px solid #ddd; border-radius: 15px; padding: 0px; text-align: center; max-width: 300px; height: auto;">
 				        <ul style="display: block">
 				            <li><p>Open source platform developed by TriMet and partners in 2009</p></li>
-										<li><p>Uses open data sources: OpenStreetMap; GTFS; and the National Elevation Dataset (NED)</p></li>
+										<li><p>Uses open data sources: OSM; GTFS; and the National Elevation Dataset (NED)</p></li>
 										<li><p>Can combine multiple modes into a single trip</p></li>
 										<li><p>Dozens of applications worldwide</p></li>
 				        </ul>
@@ -204,22 +218,22 @@
 										<ul style="display: block">
 											<li><p>Modern, modular library</p></li>
 											<li><p>Mobile-first design</p></li>
-											<li><p>Spanish language support</p></li>
+											<li><p>Multiple language support</p></li>
 										</ul>
 								</ul>
 
 						</div>
 				</section>
+			</section>
 
-
-
+				<section>
 					<section data-background="img/sidewalk_cat.jpg" data-state="dimbg">
-						<h2>Open Data Enhancements</h2>
+						<h2>2. Open Data Enhancements</h2>
 						<div class="ulist">
 								<ul>
-										<li><p>Improved regional addresses for increased address match rate</p></li>
-										<li><p>Make it easier to load authoritative data to OpenAddresses</p></li>
-										<li><p>Adding sidewalk data to<br>OpenStreetMap</p></li>
+										<li><p>Improved regional addresses for better geocoder performance</p></li>
+										<li><p>Make it easier to load authoritative data into OpenAddresses</p></li>
+										<li><p>Adding sidewalk tags to OSM</p></li>
 								</ul>
 
 						</div>
@@ -227,16 +241,30 @@
 
 
 					<section>
-						<h2>Sidewalk tagging</h2>
+						<h2>OSM Sidewalk tagging</h2>
 						<img src="img/TriMet_sidewalk_tagging.gif" alt="">
 					</section>
-				<!-- OTP Background -->
+				</section>
 
+					<section>
+						<h2>3. Integrated Payment Plan</h2>
+						<div class="ulist">
+								<img src="img/ride_tap.gif" alt=""
+								width="30%" style="float: right;">
+								<ul style="width: 60%;">
+										<li><p>To be developed by moovel, who developed TriMet's mobile ticketing app &rarr;</p></li>
+										<li><p>Detailed technical roadmap to be completed by 2019</p></li>
+										<li><p>In-kind contribution</p></li>
 
+								</ul>
 
+						</div>
+					</section>
 
-
-
+					<section>
+						<h2>4. Mapzen Pelias enhancements</h2>
+							<a href="https://trinet.trimet.org/static/gis/foss/">https://trinet.trimet.org/static/gis/foss/</a>
+					</section>
 
 
 			</div>

@@ -1397,3 +1397,32 @@ body {
     opacity: 0.4 !important;
     background-position: bottom;
   }
+
+  /*.spacer {
+      height: calc(100% - 200px);
+      width: 0px;
+      float: right;
+  }
+  .bottomRight {
+      height: 200px;
+      float: right;
+      clear: right;
+  }*/
+
+  .container {
+      /*font-size: small;
+      background: aqua;*/
+      position: relative;
+  }
+
+  .exclusion {
+
+      -ms-wrap-flow: both;
+      -ms-wrap-margin: 10px;
+      /*z-index: 1;*/
+      position:absolute;
+      right:0;
+      bottom:0; /* try fiddling with this. For some reason bottom: -10px (or the like) works better here */
+      /*width: 150px;
+      height: 100px;*/
+  }
